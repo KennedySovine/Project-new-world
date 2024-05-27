@@ -1,22 +1,22 @@
+init python:
+    class Player:
+        def __init__(self, name, height, aLover, style):
+            self.Name = "Y/N"
+            self.Height = "medium"
+            self.aLover = False
+            self.style = "random"
+#Images 
+image bg office = "images/officeBG.png"
 # Characters
 define j = Character("Juniper")
-default j.Name = "Juniper"
-default j.Height = "tall"
+image j basic = "images/juniperSprite.png"
 
 define c = Character("Charis")
-default c.Name = "Charis"
-default c.Height = "medium"
 
 define a = Character("Alan")
-default a.Name = "Alan"
-default a.Height = "short"
 
 define p = Character("")
 define u = Character("???") #used when a character is unknown by name
 
 #player character
-define pc = Character("")
-default pc.Height = "medium"
-default pc.Nosey = False
-default pc.Name = "Y/N"
-default pc.aLover = False
+define player = Player("Y/N", "medium", False, "random")
