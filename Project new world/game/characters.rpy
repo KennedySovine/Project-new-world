@@ -8,7 +8,9 @@ init python:
             self.chaos = chaos
             self.calm = calm
 
-#Images 
+# World Choices
+define pain = True
+# Images 
 image bg office = "images/officeBG.png"
 define bg_black = Solid("#000000")
 define bg_white = Solid("#FFFFFF")

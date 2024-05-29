@@ -6,7 +6,6 @@ $ concern = False
 $ playerRan = False
 $ dadForgive = False
 $ bracelet = False
-$ pain = True
 
 label sceneTwo:
     scene bg office
