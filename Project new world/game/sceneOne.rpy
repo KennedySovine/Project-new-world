@@ -69,6 +69,10 @@ label sceneOne:
         "Desk with snacks and drinks":
             "You move towards the desk with junk food and drinks, and a half-drunk bottle of whisky."
             call alanDesk
+    hide j basic
+    #hide c basic
+    #hide a basic
+    #show c basic at right with moveinright
     "Charis smooths out his robes and quickly rummages to find a piece of paper on his desk. He hands you a file and printed in big, red text on the front it reads:"
     "PROJECT NORTH"
     c "It is about time I formally welcome you to Shad Tuod. To put it simply, this is the Office of the Gods."
@@ -83,33 +87,45 @@ label sceneOne:
         "Why me?":
             "'Why me? What makes me different?'"
             c "Because you're a good person and we can trust your choice to be true."
-            show j basic at right
+            show j basic at left
             j "You have...a connection to the old world that we deem worth exploring."
+            #hide c basic
+            #show a basic at right
             a "Because you're the {i}chosen one{/i}, destined to save the world from its own destruction."
             "The other two shoot Alan a look. You hope it was a joke."
             hide j basic
+            #hide a basic
             jump reaction
         "I don't want to":
             "'What if I don't want to? Why can't I go back?'"
+            #show a basic at left
             a "Go back where? Go on, tell me one thing about yourself. Tell me where you're going back to."
             "Juniper scowls behind him and Charis lets out a gasp, but you barely notice as your mind begins to spiral."
             "It was cruel, but it was true. You try to remember who you were, where you came from, but it's all a blur. There's nothing."
             show j basic at right
             j "When a god is made, their old life is lost. You can't go back...I'm sorry."
+            #hide a basic
+            #hide j basic
             jump reaction
         "The old world?":
             "'What's so wrong with the old world?'"
+            #show a basic at left
             a "It's broken and dying; that's a stupid question."
+            #show c basic at right
             c "Whilst there is some beauty in that world, it has been corrupted. We know we can do better, we just need your assistance in that matter."
             "The two of them look at you as if you're the answer to all their questions. Juniper folds their arms and looks away, not wanting to get involved."
+            #hide a basic
+            #hide c basic
             jump reaction
         "Agree":
             "'Alright, let's get started.'"
             pass
         
+    #show c basic at right
     c "Alright, we will take you to your desk shortly. There you will find a file. Please open it and you will experience a tale from the old world."
     c "This will help you guide you to a choice, and what you decide will impact the new world we build."
     c "So be careful what you pick. There's no going back..."
+    #hide c basic
     "The three of them walk you to your desk. You spot it immediately because it is completely empty aside from the file."
     "You feel a weight in your pocket and stick your hand in to find out what it is."
 
@@ -141,7 +157,9 @@ label sceneOne:
 
     "You look at the file on your desk with renewed interest and pick it up. On the front, it reads:"
     "OW_NG_CASE-1_PAIN"
+    #show c basic at right
     c "We will wait just outside for you to finish. Thank you again for your help with all of this."
+    #hide c basic
     "You nod. Once they step outside, you open the file and begin to read."
     return with fade
 
