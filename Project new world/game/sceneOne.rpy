@@ -6,12 +6,16 @@ label nameInput:
 
 label stayText:
     menu staying_menu:
-        "'I’d like to hear what’s going on. From {i}all{/i} of you.'":
+        "'I’d like to hear what’s going on. From {i}all{/i} of you.'":]
+            show j basic at right with moveinright
+            #show c basic at left with moveinleft
             "Juniper and Alan share a smug look, Juniper taps Charis on the shoulder."
             j "C’mon Charis even they want us to stay just get on with it already and we can get back to work."
             "Charis lets out a long sigh, he clearly hadn’t wanted this to go this way."
             c "Fine..."
         "'If Charis wants to tell me I’m happy to listen to him.'":
+            #show c basic at left with moveinleft
+            #show a basic at right with moveinright
             "Charis looks to you, surprised but pleased to hear your verdict."
             "The other two look slightly less pleased, but Alan looks determined."
             a "Look I don’t care if you want me here, I’m staying. Got it?"
@@ -21,11 +25,12 @@ label stayText:
         "'Can someone just tell me what’s going on?'":
             "The three look over to you, for once unified as all share a sense of empathy."
             "They’ve all been in your shoes but the way you spoke reminded them instantly of some long-forgotten pasts. They look at you apologetically."
+            show j basic at right with moveinright
             j "Go on Charis... floors yours."
     return
 
 label sceneOne:
-    
+    scene bg office
     "You bolt up awake, your mind foggy but already aware that something is wrong and this is not where you were before."
 
     menu calm:
@@ -319,6 +324,7 @@ label charisDesk:
             $ nosey = False
             $ player.aLover = False
 
+    #show c basic at right with moveinright
     "Eventually, after an agonising wait someone enters the cubicle. You take a moment to observe the hunched individual."
     "He’s wearing white silken robes, with golden embellishments. He has old fashioned sandals on his feet, explaining the loud footsteps from the clopping wood."
     "The bespectacled individual now meets your gaze. Their eyes look incredibly tired, their face well worn."
@@ -366,6 +372,7 @@ label charisDesk:
     c "There are others who have awaited your arrival, and they wish to meet you too. Let’s not keep them waiting. As soon as we’re all together, we’ll answer your questions."
     "You follow Charis out of the cubicle and back into the room of desks."
     "Once out the cubicle you hear a voice below out from behind..."
+    #show a basic at left with moveinleft
     u "Oi, Charis. You gonna introduce us or what! Or are you planning on hogging the newbie to yourself."
     "Charis winces as the loud individual calls to him."
     c "Ah, Alan. Whilst I appreciate your urgency, it may be advisable not to startle our new guest whilst they adapt to all this."
@@ -383,17 +390,20 @@ label charisDesk:
     c "Now that I’ve found you, we need to locate Juniper, and then we can get started with initiation."
     a "Oh boy, I can’t {i}wait{/i} for initiation. Wouldn’t want to miss that for the world. Literally."
     "You sense the searing sarcasm from Alans remark. Charis chooses to ignore Alans comment, and you continue."
+    #hide a basic with moveoutleft
     "You eventually reach another cubicle, and Charis asks you and Alan to wait a second while he gets Juniper."
-    show j basic at right with moveinright
+    show j basic at left with moveinleft
     "Eventually, a new figure exits the cubicle alongside Charis. They have striking yellow eyes, and ears which you can only relate to that of a goat, poking out from their messy brown hair."
     u "It’s nice to make your acquaintance."
     "Their voice is rather deep and gravely compared to what you expected, and you struggle to discern what they are saying at first."
     j "I am Juniper. I’d answer the questions you have, but I know how Charis wants to have that honour."
     "Juniper shoots Charis a knowing look, and he shuffles a bit, clearly knowing that they are accommodating his wishes perhaps against their own."
     c "I appreciate everyone allowing me to guide this initiation. Now we are gathered, lets head back to my desk to get started."
-    hide j basic with moveoutright
+    hide j basic with moveoutleft
+    #hide c basic with moveoutright
     "You walk in silence back to Charis’s cubicle. Your mind whirring from all these new faces and places that don’t seem to fit together."
     "Charis gestures you to come in, and so the four of you enter."
+    #show c basic at right with moveinright
     c "Now that you’ve all been introduced, I don’t mind if we begin initiation with just us two. But it’s up to you of course."
     "You figure Charis wants the other two to leave but holds off saying, instead opting to pick at his hands."
 
@@ -407,6 +417,7 @@ label alanDesk:
     "On the desk is two consoles and a gaming player, all stacked on top of one another, with a gaming laptop beside them. They're all paired with a cheap, tiny monitor with a black spot in the corner."
     "Hidden in the pile of half empty crisp packets, you notice a red flashing light, and upon looking closer..."
     u "BOO!" with vpunch
+    #show a basic at right with moveinright
     "Suddenly, a heavy looking figure jumpps up behind you."
 
     menu heightA:
@@ -446,7 +457,7 @@ label alanDesk:
     else:
         "On the way, you see a giant of a person and hear them whispering 'Oh God' to themselves."
     
-    show j basic at right with moveinright
+    show j basic at left with moveinleft
     a "Oh hey, Juni!"
     "Alan chucks a pack of crisps from his pocket to Juni"
     u "Thanks. But what are you doing with this new guy? Alan, I swear if you leaked anything important--"
@@ -471,11 +482,13 @@ label alanDesk:
     j "Hey, I'm not dealing with them alone; we'll take you to Charis."
     "Alan grumbles in quiet protest, but the two lead you to Charis' desk."
 
-    hide j basic with moveoutright
+    hide j basic with moveoutleft
+    #hide a basic with moveoutright
     "As you approach, you see a space littered with books. A cat sits atop them looking at you with keen eyes."
     "You see a hunched over, pake figure wearing pale, silky robes. He seems to be older than the two you met previously, thought you can't say for sure."
     "He looks frail and weak, though the appearence isn't helped stoof near Juniper. He comes up to you."
 
+    #show c at right with moveinright
     c "Hello, Im Charis. It is nice to meet you. I'll be taking care of you from now on."
     menu introC:
         "Greet him":
