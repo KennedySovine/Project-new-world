@@ -52,92 +52,92 @@ label sceneTwo:
         "If not, you may simply have to wait out the duration of the hallucination."
     else:
         "You smile as you glance back and forth. So many wonderful sights, smells, and sensations on your fingertips to process."
-        "You have no idea how this is possible, but it is an incredibel experience to finally be free outdoors from the stuffy office of the gods."
+        "You have no idea how this is possible, but it is an incredible experience to finally be free outdoors from the stuffy office of the gods."
     
     "You hear a voice calling to you. You turn around to face the souce and see a beaming child walking towards you into the clearing."
     #show bri basic at right
     "They have slightly tanned skin, and the most striking eyes which seem to glow as the light bounces off them. They also have curly, dark brown hair, which is tied up with a hairband."
     u "There you are! Your dad told us not to wander off! You're gonna get us in trouble."
-    "Dad? As far as you can tell, the yare referring to this person as being {i}your{/i} dad. You're confused; how does this person know you? Isn't this just a hallucination?"
+    "Dad? As far as you can tell, they are referring to this person as being {i}your{/i} dad. You're confused; how does this person know you? Isn't this just a hallucination?"
 
     menu info:
         "Ask where you are":
-            player "Where am I?"
+            p "Where am I?"
             b "You feelin' okay? We're in Pandistone park, of course. Y'know...for your birthday? We came here last year too. You love being in the woods, silly."
             "You don't remember these woods. Surely, such a spectacular sight would resonate in your memories, but it is as though it is your first time in this place."
             "It might be wise to pretend you remember things which you don't, or else you may lose the trust of this person."
 
             menu infoChoiceOne:
                 "Pretend you remember":
-                    player "Of course I remember, how could I not?"
+                    p "Of course I remember, how could I not?"
                     b "You have a weird sense a'humor, you know that?"
                     "It seems she has let go of her concerns for your current wellbeing."
                     $ concern = False
                 "Admit you don't remember":
-                    player "I have no idea where that is, or why I'm here."
+                    p "I have no idea where that is, or why I'm here."
                     b "When your dad catches up, I'll get him to give you some water. You might be getting dehydrated or something."
                     "The girl evidently thinks you are acting unusually to how she would expect, but you have no idea how to act. This is your first meeting."
                     $ concern = True
                     if not trust:
                         "Besides, she's not real anyways; merely a fignment of your hallucinating imagination. Your real goal should be to escape this mind game and return to those gods who screwed you over."
         "Ask who she is":
-            player "Who are you?"
+            p "Who are you?"
             b "Luke, I am your father..."
             "They laugh, but your face tells them you aren't following along with the reference they seem to be making."
             b "You doin' okay...? How many fingers am I holding up? Is it your eyes or your memory that's playing up?"
             "The barage of questions doesn't help with your confusion, and they seems to be able to tell this."
-            $ b.name = "Bri"
-            bri "It's me, Bri. Y'know, your best friend! Or, I guess, Briannah if that helps you remember, but I prefer Bri..."
+            $ b = Character("Bri")
+            b "It's me, Bri. Y'know, your best friend! Or, I guess, Briannah if that helps you remember, but I prefer Bri..."
             "Bri? You dont recall having a best friend, or any friends for that matter. Yet, this girl seems adamant that you are close."
 
             menu infoChoiceTwo:
                 "Pretend you remember":
-                    player "Of course, Bri. I was just pulling your leg!"
+                    p "Of course, Bri. I was just pulling your leg!"
                     b "You had me worried there for a minute, y'know. I'm glad you're alright."
                     $ concern = False
                 "Admit you don't remember":
-                    player "I don't remember a Bri. Are you sure I know you?"
+                    p "I don't remember a Bri. Are you sure I know you?"
                     b "I'm really worried about you. When your dad catches up, I'll get him to make sure you're not unwell..."
                     $ concern = True
             if not trust:
                 "Whatever they doped you with must be powerful enough to create such a character in your mind."
                 "They look and sound so realistic, but they did say they were gods after all. Palour tricks like this must be child's play to them...literally."
         "Ask for the date":
-            player "What's todays date?"
+            p "What's todays date?"
             b "The date? Real funny. You been replaced by some kind of alien?"
             
             menu alien:
                 "Tell the truth":
-                    player "I'm not an alien, I came from the stars. A hall of gods in fact, who oversee the earth."
+                    p "I'm not an alien, I came from the stars. A hall of gods in fact, who oversee the earth."
                     if not trust:
                         "Perhaps this will finally break you out of the this illusion. If you can break the narrative being told, you can snap this character out of their script."
                         b "Ah, I see. Okay, let me get into character..."
                         "The girl clears her throat and changes her body language."
-                        $ b.name = "Bri"
+                        $ b = Character("Bri")
                         b "Greetings mighty sky god! I'm Briannah, but you can call me Bri. You must be confused from your travels. The date is the 15th of July, 2003."
                         "It's no use trying to tell her the truth. She'll either think you've done mad, or believe it to be fictional roleplay. At least you have an idea of the time you are experiencing now."
                         b "I remember the date because it's my bestest friend's birthday!"
                         "She seems to be referring to you as her best friend."
                         $ concern = False
                 "Be an alien":
-                    player "Greetings, earthling. I am Xb-LIV9-Gl3D of the Quantar region."
+                    p "Greetings, earthling. I am Xb-LIV9-Gl3D of the Quantar region."
                     b "Nice to meet you..."
                     "She snorts laughing."
-                    # b.name = "Bri"
+                    # b = Character("Bri")
                     b "Yep, I'm not even gonna try to repeat that name, sorry. But, I am Briannah of the planet earth. It is an honor to be your first contact. The star date is the 15th of July, 2003."
                     "Your lie seemed to work. A clever ruse to extract the date from this Briannah without rasing concern to your true nature."
                     $ concern = False
                 "Ignore the question":
-                    player "Just tell me the date already. I don't have time for games."
+                    p "Just tell me the date already. I don't have time for games."
                     b "Gee, somebody woke up on the wrong side of the bed today, huh? It's your birthday, isn't it..."
                     "She expects you to know this information. Yet, when you think about it, you have no idea when your birthday is."
                     b "You really don't remember...? Well, its the 15th of July, 2003. Once your dad reaches us, I'll get him to make sure you're okay. You aren't looking too god. Just stay put for now."
                     $ concern = True
                     "It seems your bluntness has caused the girl to become concerned about your wellbeing and state of mind."
     "A new voice enters the clearing; a shout from not too far behind where your supposed friend entered the area."
-    u "{player.name}! .... Briannah! ... Are you there?!"
+    u "[player.name]! .... Briannah! ... Are you there?!"
     "The girl turns to face the voice and cups her hands around her mouth to shout back."
-    $ b.name = "Bri"
+    $ b = Character("Bri")
     b "Over here! We're just ahead of you!"
     "Bri shouts back, attracting the attention of the figure in the near distance, who is now hurrying over."
     #show f basic at left with moveinleft
@@ -151,7 +151,7 @@ label sceneTwo:
 
     menu fatherChoice:
         "Apologize":
-            player "I'm sorry, everything is just so overwhelming. I wanted to be alone for awhile to process things."
+            p "I'm sorry, everything is just so overwhelming. I wanted to be alone for awhile to process things."
             
             if concern:
                 b "I have to admit, they seem a little weird today. I think the birthday is overwhelming them and they might need some water. They were quite confused just now."
@@ -205,7 +205,7 @@ label sceneTwo:
     
     if playerRan:
         "Bri and your father soon appraoch, having likely tracked you from your screams after the injury."
-        f "Are you okay? I'm so sorry, {player.name}. I've already ruined your birthday by shouting at you and now you're hurt because of me...!"
+        f "Are you okay? I'm so sorry, [player.name]. I've already ruined your birthday by shouting at you and now you're hurt because of me...!"
     "It makes no sense how this pain can feel so authentic and real. You were in the office, reading the case file. There's no way you could really be on earth in another body...right?"
     "You feel the tears running down your cheeks caused by the pain of having twisted your ankle."
     f "Please forgive me...I know I'm not perfect, but I love you with all of my heart, and I always will. I thought Pandistone would be the perfect way to spend your birthday..."
@@ -214,7 +214,7 @@ label sceneTwo:
 
     menu role:
         "Embrace the Role":
-            player "It's okay, dad...I...I love you too. I know you--you only wanted me to have a good day...I just haven't been feeling like myself..."
+            p "It's okay, dad...I...I love you too. I know you--you only wanted me to have a good day...I just haven't been feeling like myself..."
             "You try to get across what you think will best east the man's sorrows between labored breaths and grunts of pain."
             "For the first time, you see a pained smile cross the man's face, due to his worries for your safety. You feel a warmth in your heart: a bond to them that you didn't feel until now."
             $ dadForgive = True
@@ -240,16 +240,16 @@ label sceneTwo:
 
     menu braceletChoice:
         "Accept":
-            player "Thanks...Bri...This is a really--really thoughtful gift--"
+            p "Thanks...Bri...This is a really--really thoughtful gift--"
             "You convey your thanks between the twinges of sharp pain."
-            player "I-I'll treasure it...forever..."
+            p "I-I'll treasure it...forever..."
             if dadForgive:
                 "Bri's face beams with a wonderful smile, and you feel a warmth inside, much like the one you felt when telling your father you loved him."
             else:
                 "Bri's face lights up with a lovely smile. This makes you feel a little warm inside. You feel a bond forming with her, which you haven't felt before."
             $ bracelet = True
         "Decline":
-            player "Nows...nows not really the best time...could you--help me up?"
+            p "Nows...nows not really the best time...could you--help me up?"
             "You just about make out as you grunt and groan while your father continues to struggle to lift you up."
             b "Oh...yeah, sorry...Just thought it might a' cheered you up..."
             "Bri puts the bracelet back in her pocket, trying to hid her disappointment. She now uses both of her hands to help life you up."
@@ -269,29 +269,29 @@ label sceneTwo:
 
     
     menu removePain:
-        u "Do you want to remove pain?":
-            "Yes":
-                menu removeConfirm:
-                    u "Are you sure you want to remove pain from the world?":
-                        "Yes":
-                            $ pain = False
-                            $ player.calm += 1
-                        "No":
-                            jump removePain
-            "No":
-                menu removeConfirm:
-                    u "Are you sure you want to keep pain in the world?":
-                        "Yes":
-                            $ pain = True
-                            $ player.chaos += 1
-                        "No":
-                            jump removePain
-            "What?":
-                u "Before you can continue, you must choose...Yes?...or...No?"
-                "Do you want to remove pain from the world?"
-                menu confirm:
-                    "Okay":
-                        jump removePain
-                    "Why?":
-                        u "This is the purpose of your presence. To make the decisions that will shape the new world. Take your time, and choose wisely, but in the end you must decide."
-                        jump removePain
+        u "Do you want to remove pain?"
+        "Yes":
+            menu removeConfirm:
+                u "Are you sure you want to remove pain from the world?"
+                "Yes":
+                    $ pain = False
+                    $ player.calm += 1
+                "No":
+                    jump removePain
+        "No":
+            menu keepConfirm:
+                u "Are you sure you want to keep pain in the world?"
+                "Yes":
+                        $ pain = True
+                        $ player.chaos += 1
+                "No":
+                    jump removePain
+        "What?":
+            u "Before you can continue, you must choose...Yes?...or...No?"
+            u "Do you want to remove pain from the world?"
+            menu confirm:
+                "Okay":
+                    jump removePain
+                "Why?":
+                    u "This is the purpose of your presence. To make the decisions that will shape the new world. Take your time, and choose wisely, but in the end you must decide."
+                    jump removePain

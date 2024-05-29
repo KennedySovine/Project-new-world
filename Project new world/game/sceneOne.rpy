@@ -9,6 +9,7 @@ init python:
 
 label nameInput:
     $ player.name = renpy.input("What is your name?").strip()
+    $ p = Character(player.name)
     return
 
 label stayText:
@@ -55,7 +56,7 @@ label sceneOne:
             "That's what had made you so afraid. But this was not that place, maybe that place was just a bad dream."
 
         "Call out for help":
-            player "Help!" with vpunch
+            p "Help!" with vpunch
             "You call out, hoping for anything to happen."
             "Your voice echoed, hearing yourself over and over for what felt like an eternity."
             "It made you feel dizzy and truly, utterly alone."
@@ -163,7 +164,7 @@ label sceneOne:
     c "We will wait just outside for you to finish. Thank you again for your help with all of this."
     #hide c basic
     "You nod. Once they step outside, you open the file and begin to read."
-    return with fade
+    return
 
 label juniperDesk:
     "You step gingerly into the cubicle; it feels like an invasion, but there's no one there."
@@ -234,7 +235,7 @@ label juniperDesk:
             "They seem to assess your handshake, giving you a small nod at your cooporation."
             "They clasp their other hand over the top of yours and give it a small squeeze: an attempt at reassurance."
         "Ask where you are":
-            player "Where am I?"
+            p "Where am I?"
             "You ask as you clasp onto their hand desperately."
             u "That will be answered in due time..."
             "They take their hand from yours, wiping it on their cloak before inspecting it and dropping it down to their side."
@@ -356,13 +357,13 @@ label charisDesk:
         u "I'm willing to accept your curiosity given the circumstances. But my peers may not be quite so forgiving. Don't worry, it's only natural to have questions, and me and Alexios won't tell."
         "You gather that Alexios is the cat. The fellow forms a meek smile, and you feel he won't hold this against you."
 
-    if aLover == True:
+    if player.aLover == True:
         u "Ah, I see you've met Alexios. He's a great judge of character you know, so he must like you to be purring such a storm."
         "The old man chuckles to himself and forms a smile so warm that you can't help but reciprocate."
         u "That said he can be quite a rascal sometimes. Particularly… when it comes to knocking ink upon my parchment."
         "He darts across the table to prevent Alexios from toppling a glass vial of ink with his paws. For someone so frail he was surprisingly fast."
 
-    if nosey == False and aLover == False:
+    if nosey == False and playr.SaLover == False:
         u "Thank you for waiting so patiently. I'm glad you aren't the type to go rifling through a fellow's possessions when left unattended."
         "The man smiles to himself, seemingly satisfied in the fact that you showed restraint when given the temptation."
         u "That said, feel free to make yourself comfortable, I assure you Alexios does not bite."
@@ -455,7 +456,7 @@ label alanDesk:
 
     call nameInput
 
-    u "'aight {player.name}, so what makes you think you can creep around my desk for?"
+    u "'aight [player.name], so what makes you think you can creep around my desk for?"
     "He chuckles and gives you a playful push."
 
     menu apologyA:
@@ -494,9 +495,9 @@ label alanDesk:
     u "Well, it's worked so far. Also, shouldn't you be taking the new guy to Charis so he can get them sorted and introduced? That is your job, after all."
     a "Yes {i}Juni{/i}. I was about to do that but because I'm {i}such{/i} a {i}great{/i} friend, I remembered to give you the crisps you asked for, remember?! Also, I think you'll find our job description is to--"
     u "I know what our job description is, but the new guy doesn't and that's for Charis to explain. What your name anyways?"
-    "'I'm {player.name}', you say."
+    "'I'm [player.name]', you say."
     "Juniper reaches out to shake your hand. You see the tips of their medium brown hands fake to a rusted red color as if stained."
-    j "That's a nice name. Nice to meet you, {player.name}. I'm Juniper. Anyways, we should take you to Charis. I'm sure he's already worrying."
+    j "That's a nice name. Nice to meet you, [player.name]. I'm Juniper. Anyways, we should take you to Charis. I'm sure he's already worrying."
     a "Yep, and that's your problem now, I've got shit to do; Bye!"
     "He starts to walk off, but Juniper grabs him by the scruff of his neck."
     "A noise of complain escapes him, but Juniper seems undeterred."
@@ -513,8 +514,8 @@ label alanDesk:
     c "Hello, Im Charis. It is nice to meet you. I'll be taking care of you from now on."
     menu introC:
         "Greet him":
-            "Hi, I'm {player.name}."
-            c "Nice to meet you {player.name}"
+            "Hi, I'm [player.name]."
+            c "Nice to meet you [player.name]"
         "Question him":
             "'Where am I and what's going on?'"
             c "I am sure this is all confusing, but I'll answer in due time. I must first explain how we do things around here."
