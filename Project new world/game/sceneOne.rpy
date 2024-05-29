@@ -1,5 +1,12 @@
 include "characters.py"
 
+init python:
+    import random
+
+    def randomStyle():
+        styles = ["gothic", "cute", "modern"]
+        return random.choice(styles)
+
 label nameInput:
     $ player.Name = renpy.input("What is your name?").strip()
     return
@@ -147,13 +154,7 @@ label sceneOne:
             $ player.style = "modern"
         "Leave it":
             "You leave it for now, but whatever it was immedialty dissapears from your pocket."
-            $ random_number = renpy.random.randint(1, 3)
-            if random_number == 1:
-                $ player.style = "gothic"
-            elif random_number == 2:
-                $ player.style = "cute"
-            else:
-                $ player.style = "modern"
+            $ player.style = randomStyle()
 
     "You look at the file on your desk with renewed interest and pick it up. On the front, it reads:"
     "OW_NG_CASE-1_PAIN"
