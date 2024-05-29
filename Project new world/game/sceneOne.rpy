@@ -8,30 +8,30 @@ init python:
         return random.choice(styles)
 
 label nameInput:
-    $ player.Name = renpy.input("What is your name?").strip()
+    $ player.name = renpy.input("What is your name?").strip()
     return
 
 label stayText:
     menu staying_menu:
-        "'I’d like to hear what’s going on. From {i}all{/i} of you.'":]
+        "'I'd like to hear what's going on. From {i}all{/i} of you.'":
             show j basic at right with moveinright
             #show c basic at left with moveinleft
             "Juniper and Alan share a smug look, Juniper taps Charis on the shoulder."
-            j "C’mon Charis even they want us to stay just get on with it already and we can get back to work."
-            "Charis lets out a long sigh, he clearly hadn’t wanted this to go this way."
+            j "C'mon Charis even they want us to stay just get on with it already and we can get back to work."
+            "Charis lets out a long sigh, he clearly hadn't wanted this to go this way."
             c "Fine..."
-        "'If Charis wants to tell me I’m happy to listen to him.'":
+        "'If Charis wants to tell me I'm happy to listen to him.'":
             #show c basic at left with moveinleft
             #show a basic at right with moveinright
             "Charis looks to you, surprised but pleased to hear your verdict."
             "The other two look slightly less pleased, but Alan looks determined."
-            a "Look I don’t care if you want me here, I’m staying. Got it?"
+            a "Look I don't care if you want me here, I'm staying. Got it?"
             "Juniper nods in agreement, the two clearly happy to walk all over Charis. Whatever worries they had previously been long gone."
             "Charis fumbles over their words, trying desperately to find a way to get them to leave but eventually settles."
             c "Fine... but just keep quiet."
-        "'Can someone just tell me what’s going on?'":
+        "'Can someone just tell me what's going on?'":
             "The three look over to you, for once unified as all share a sense of empathy."
-            "They’ve all been in your shoes but the way you spoke reminded them instantly of some long-forgotten pasts. They look at you apologetically."
+            "They've all been in your shoes but the way you spoke reminded them instantly of some long-forgotten pasts. They look at you apologetically."
             show j basic at right with moveinright
             j "Go on Charis... floors yours."
     return
@@ -55,7 +55,8 @@ label sceneOne:
             "That's what had made you so afraid. But this was not that place, maybe that place was just a bad dream."
 
         "Call out for help":
-            "'Help!' you call out, hoping for anything to happen."
+            player "Help!" with vpunch
+            "You call out, hoping for anything to happen."
             "Your voice echoed, hearing yourself over and over for what felt like an eternity."
             "It made you feel dizzy and truly, utterly alone."
 
@@ -205,13 +206,13 @@ label juniperDesk:
     "They survey the room, and you take in their appearance: They stand incredibly tall."
     menu heightJ:
         "It was rare you met someone taller than you. It makes you feel slightly uneasy.":
-            $ player.Height = "tall"
+            $ player.height = "tall"
 
         "They are a decent amount taller, not unheard of as you're average height.":
-            $ player.Height = "medium"
+            $ player.height = "medium"
 
         "You are quite short; it feels like they tower over you.":
-            $ player.Height = "short"
+            $ player.height = "short"
 
     "You follow where their yellow goat-like eyes go. It's the only part of them that is easy to follow on account of their dense bulky layers of clothes."
     "A thick cloak sits heavy on their shoulders. It's messy with twigs poking out, almost as if growing from the cloak itself." 
@@ -233,7 +234,8 @@ label juniperDesk:
             "They seem to assess your handshake, giving you a small nod at your cooporation."
             "They clasp their other hand over the top of yours and give it a small squeeze: an attempt at reassurance."
         "Ask where you are":
-            "'Where am I?' You ask as you clasp onto their hand desperately."
+            player "Where am I?"
+            "You ask as you clasp onto their hand desperately."
             u "That will be answered in due time..."
             "They take their hand from yours, wiping it on their cloak before inspecting it and dropping it down to their side."
         "Do nothing":
@@ -265,7 +267,7 @@ label juniperDesk:
     "A voice shouts out, followed by a noise of complaint as something hits Juniper square in the face."
     "Juniper scowls, you follow their gaze and see someone with short spikey red hair."
 
-    if player.Height == "short":
+    if player.height == "short":
         "They seem to be around your height."
     else:
         "You appear to be taller than them."
@@ -277,21 +279,21 @@ label juniperDesk:
     j "For the record, Alan, they came to me first, I'm just escorting them there. Besides he'd rather they meet me then {i}you{/i}."
     "The tension between the two of them feels friendly, but it is hard to say for sure."
     "This 'Alan' looks between the two of you."
-    a "Well I may as well join you two to see him. Can’t have him preaching too much goodness, can we?"
-    j "As if we’ll manage to get a word in about it..."
+    a "Well I may as well join you two to see him. Can't have him preaching too much goodness, can we?"
+    j "As if we'll manage to get a word in about it..."
     "Alan laughs sarcastically but seems to agree, stepping into place behind you as the three of you walk."
     hide j basic with moveoutright
 
     "You approach a desk that is covered from top to bottom in books. A cat glances at you, curious at the new face."
-    "Thick hardback books are stacked onto every possible surface, cluttering up the space and making it feel much smaller than Juniper’s cubicle."
+    "Thick hardback books are stacked onto every possible surface, cluttering up the space and making it feel much smaller than Juniper's cubicle."
     show j basic at right with moveinright
     "Juniper steps into their cubicle space first and you follow with Alan behind you."
     "You see a hunched over pale figure wearing pale silky robes. He seems to be older than the two you met previously, though it is hard to say for sure."
-    "He looks frail and weak, though the appearance isn’t helped stood near Juniper."
+    "He looks frail and weak, though the appearance isn't helped stood near Juniper."
 
-    c "Juniper something has gone horribly wrong! Our new friend they’re {i}nowhere{/i} to be found! I looked where they were supposed to appear and the lunch hall and-"
+    c "Juniper something has gone horribly wrong! Our new friend they're {i}nowhere{/i} to be found! I looked where they were supposed to appear and the lunch hall and-"
     "Juniper puts out a hand, trying to stop his endless nervous babble."
-    j "Relax, they came over to my desk and I don’t care enough to explain all this to them."
+    j "Relax, they came over to my desk and I don't care enough to explain all this to them."
     c "What do you mean they--oh."
     "Charis looks over to you for the first time and seems to relax a little, one of many stresses finally leaving his mind."
     a "Yeah, we got them here in one piece and everything."
@@ -308,87 +310,87 @@ label charisDesk:
 
     menu heightC:
         "The books are almost as tall as you are":
-            "You peer down at the towering tomes. There’s a wealth of material covering wars, ethics, science, technology, even cookbooks."
-            $ player.Height = "tall"
+            "You peer down at the towering tomes. There's a wealth of material covering wars, ethics, science, technology, even cookbooks."
+            $ player.height = "tall"
         "The books are on level with your head":
             "You are almost impressed with the sheer quantity of reading materials contained within the compact cubicle space, even if disorganized."
-            $ player.Height = "medium"
+            $ player.height = "medium"
         "The books tower above you like giants.":
-            "You are careful not to knock into any of them. Partly from fear that you’d meet your unfortunate demise beneath their heavy embrace."
-            $ player.Height = "short"
+            "You are careful not to knock into any of them. Partly from fear that you'd meet your unfortunate demise beneath their heavy embrace."
+            $ player.height = "short"
 
     "You look back to the desk. It is adorned with various trinkets, parchment, ink bottles, and rather large amount of cat hair. Not to mention even more books."
-    "As your gaze meets the centre of the desk, a file catches your attention. It’s resting beneath the paw of the cat, but you can make out the letters '-DENTIAL'."
+    "As your gaze meets the centre of the desk, a file catches your attention. It's resting beneath the paw of the cat, but you can make out the letters '-DENTIAL'."
     "The cat looks at you with an almost pensive look."
 
     menu curiousC: #aLover is for animal lover
-        "You move the cat’s paw to get a closer look at this file":
+        "You move the cat's paw to get a closer look at this file":
             "The cat hisses, judging your inability to satiate your curiosity. And to be fair, the saying goes that the curiosity killed the cat."
             "The cat does relent, retracting its paw, and allowing an uninhibited view of the file. You now see that it reads 'CONFIDENTIAL'. "
-            "Additionally, there’s a title to the document: 'OW_NG_CASE-1_PAIN'. "
+            "Additionally, there's a title to the document: 'OW_NG_CASE-1_PAIN'. "
             "Before you can have time to open the file, you hear footsteps approaching. You scramble to move yourself back to the front of the desk and compose yourself."
             $ nosey = True
             $ player.aLover = False
         "You reach your hand out gently to pet the cat":
-            "Whilst the document is certainly appealing, you can’t help but want to greet the furry feline that is your first contact in this mysterious place."
+            "Whilst the document is certainly appealing, you can't help but want to greet the furry feline that is your first contact in this mysterious place."
             "The cat sniffs at your hand, acting as your judge. Clearly it deems you to be of good character, as it begins nuzzling your hand, and emits a heartwarming purr."
             "You begin to hear footsteps. You turn to face the entrance, but you cannot bring yourself to retract your hand from the adorable purring cat."
             $ nosey = False
             $ player.aLover = True
         "You keep your distance, not wishing to come across as nosey":
             "The cat looks at you with a more relaxed expression, now stretching out to fully cover the document."
-            "Any chance to read it has now been lost beneath its furry mass. You hope that in time you’ll be able to gain the answers to your many questions."
-            "If only you could find someone to talk to. As nice as the cat’s company is, it doesn’t make for a great source of information."
+            "Any chance to read it has now been lost beneath its furry mass. You hope that in time you'll be able to gain the answers to your many questions."
+            "If only you could find someone to talk to. As nice as the cat's company is, it doesn't make for a great source of information."
             "As if to answer your internal pleas, the sound of footsteps begins to reach your ears."
             $ nosey = False
             $ player.aLover = False
 
     #show c basic at right with moveinright
     "Eventually, after an agonising wait someone enters the cubicle. You take a moment to observe the hunched individual."
-    "He’s wearing white silken robes, with golden embellishments. He has old fashioned sandals on his feet, explaining the loud footsteps from the clopping wood."
+    "He's wearing white silken robes, with golden embellishments. He has old fashioned sandals on his feet, explaining the loud footsteps from the clopping wood."
     "The bespectacled individual now meets your gaze. Their eyes look incredibly tired, their face well worn."
 
     if nosey == True:
         u "Whilst I understand you must be quite confused at this time; I would suggest you do not rummage through what is not yours."
-        "You feel your face redden in shame. You can hear the tinge of disappointment in the old man’s voice. "
-        u "I’m willing to accept your curiosity given the circumstances. But my peers may not be quite so forgiving. Don’t worry, it’s only natural to have questions, and me and Alexios won’t tell."
-        "You gather that Alexios is the cat. The fellow forms a meek smile, and you feel he won’t hold this against you."
+        "You feel your face redden in shame. You can hear the tinge of disappointment in the old man's voice. "
+        u "I'm willing to accept your curiosity given the circumstances. But my peers may not be quite so forgiving. Don't worry, it's only natural to have questions, and me and Alexios won't tell."
+        "You gather that Alexios is the cat. The fellow forms a meek smile, and you feel he won't hold this against you."
 
     if aLover == True:
-        u "Ah, I see you’ve met Alexios. He’s a great judge of character you know, so he must like you to be purring such a storm."
-        "The old man chuckles to himself and forms a smile so warm that you can’t help but reciprocate."
+        u "Ah, I see you've met Alexios. He's a great judge of character you know, so he must like you to be purring such a storm."
+        "The old man chuckles to himself and forms a smile so warm that you can't help but reciprocate."
         u "That said he can be quite a rascal sometimes. Particularly… when it comes to knocking ink upon my parchment."
         "He darts across the table to prevent Alexios from toppling a glass vial of ink with his paws. For someone so frail he was surprisingly fast."
 
     if nosey == False and aLover == False:
-        u "Thank you for waiting so patiently. I’m glad you aren’t the type to go rifling through a fellow’s possessions when left unattended."
+        u "Thank you for waiting so patiently. I'm glad you aren't the type to go rifling through a fellow's possessions when left unattended."
         "The man smiles to himself, seemingly satisfied in the fact that you showed restraint when given the temptation."
         u "That said, feel free to make yourself comfortable, I assure you Alexios does not bite."
         "He gestures towards the furry feline sprawled across his desk space."
 
-    u "Anyways, I’m sure you’ve got a lot of questions for me, so let’s get introductions out of the way, shall we?"
+    u "Anyways, I'm sure you've got a lot of questions for me, so let's get introductions out of the way, shall we?"
 
   
     call nameInput
-    c "My name is Charis, and you’ve already met Alexios my cat."
+    c "My name is Charis, and you've already met Alexios my cat."
     "Charis extends his hand out, gesturing you to shake commemorating your arrival to this unusual place. He seems earnest with his intentions, but this whole situation is unusual."
 
     menu meetingC:
         "You reach your hand out, and shake it smiling back.":
-            c "I was worried you’d find it difficult to adapt to such an overwhelming situation, but I’m glad you are willing to put trust in others."
+            c "I was worried you'd find it difficult to adapt to such an overwhelming situation, but I'm glad you are willing to put trust in others."
             "His smile grows, he seems to appreciate your friendliness. You both drop the handshake."
         "You take a step back, unsure if you can trust Charis.":
-            "The man’s smile begins to fade, and his arms slowly drops. He is a little disappointed though quickly renews himself."
+            "The man's smile begins to fade, and his arms slowly drops. He is a little disappointed though quickly renews himself."
             c "I know this is a lot for you to take in, but there is nothing to fear. I have only your best interests at heart."
-            "The smile returns, though it doesn’t reach his eyes. With that formality over, you can finally get some answers."
-        "You meekly extend your hand to shake, but you aren’t sure how to feel.":
+            "The smile returns, though it doesn't reach his eyes. With that formality over, you can finally get some answers."
+        "You meekly extend your hand to shake, but you aren't sure how to feel.":
             "The man squeezes your hand and reaches his other hand to hold yours reassuringly."
-            c "It’s okay to feel confused or unsure. It was once me in your very same position. Try not to worry too much, I assure you it will all become clearer in time."
-            "He lets your hands go gently, and gestures you towards the cubicle exit. It’s presumably time to get some answers that could help ease your worries."
+            c "It's okay to feel confused or unsure. It was once me in your very same position. Try not to worry too much, I assure you it will all become clearer in time."
+            "He lets your hands go gently, and gestures you towards the cubicle exit. It's presumably time to get some answers that could help ease your worries."
 
-    c "As much as I would love to answer all your questions myself, I couldn’t bring myself to be so selfish."
-    "You glean the hint of reluctance in Charis’s voice."
-    c "There are others who have awaited your arrival, and they wish to meet you too. Let’s not keep them waiting. As soon as we’re all together, we’ll answer your questions."
+    c "As much as I would love to answer all your questions myself, I couldn't bring myself to be so selfish."
+    "You glean the hint of reluctance in Charis's voice."
+    c "There are others who have awaited your arrival, and they wish to meet you too. Let's not keep them waiting. As soon as we're all together, we'll answer your questions."
     "You follow Charis out of the cubicle and back into the room of desks."
     "Once out the cubicle you hear a voice below out from behind..."
     #show a basic at left with moveinleft
@@ -397,33 +399,33 @@ label charisDesk:
     c "Ah, Alan. Whilst I appreciate your urgency, it may be advisable not to startle our new guest whilst they adapt to all this."
     "You look at this Alan character as he catches up to you."
 
-    if player.Height == "tall":
-        "Alan seems to be rather short in comparison to yourself and Charis, although Charis’s hunch does reduce his overall height."
-    if player.Height == "medium":
+    if player.height == "tall":
+        "Alan seems to be rather short in comparison to yourself and Charis, although Charis's hunch does reduce his overall height."
+    if player.height == "medium":
         "You are a little taller than Alan, though shorter than Charis if you account for his hunch."
-    if player.Height == "short":
-        "Alan seems to be around your height, and a bit shorter than Charis, you gather Charis would be taller, if only they weren’t so hunched over all the time."
+    if player.height == "short":
+        "Alan seems to be around your height, and a bit shorter than Charis, you gather Charis would be taller, if only they weren't so hunched over all the time."
             
-    a "Yeah, yeah whatever. I knew you’d be the first to find 'em anyways. Course if we did find 'em before you, I’d never here the bloody end of it."
+    a "Yeah, yeah whatever. I knew you'd be the first to find 'em anyways. Course if we did find 'em before you, I'd never here the bloody end of it."
     "Alan rolls his eyes; you get the feeling they likely enjoy winding one another up."
-    c "Now that I’ve found you, we need to locate Juniper, and then we can get started with initiation."
-    a "Oh boy, I can’t {i}wait{/i} for initiation. Wouldn’t want to miss that for the world. Literally."
+    c "Now that I've found you, we need to locate Juniper, and then we can get started with initiation."
+    a "Oh boy, I can't {i}wait{/i} for initiation. Wouldn't want to miss that for the world. Literally."
     "You sense the searing sarcasm from Alans remark. Charis chooses to ignore Alans comment, and you continue."
     #hide a basic with moveoutleft
     "You eventually reach another cubicle, and Charis asks you and Alan to wait a second while he gets Juniper."
     show j basic at left with moveinleft
     "Eventually, a new figure exits the cubicle alongside Charis. They have striking yellow eyes, and ears which you can only relate to that of a goat, poking out from their messy brown hair."
-    u "It’s nice to make your acquaintance."
+    u "It's nice to make your acquaintance."
     "Their voice is rather deep and gravely compared to what you expected, and you struggle to discern what they are saying at first."
-    j "I am Juniper. I’d answer the questions you have, but I know how Charis wants to have that honour."
+    j "I am Juniper. I'd answer the questions you have, but I know how Charis wants to have that honour."
     "Juniper shoots Charis a knowing look, and he shuffles a bit, clearly knowing that they are accommodating his wishes perhaps against their own."
     c "I appreciate everyone allowing me to guide this initiation. Now we are gathered, lets head back to my desk to get started."
     hide j basic with moveoutleft
     #hide c basic with moveoutright
-    "You walk in silence back to Charis’s cubicle. Your mind whirring from all these new faces and places that don’t seem to fit together."
+    "You walk in silence back to Charis's cubicle. Your mind whirring from all these new faces and places that don't seem to fit together."
     "Charis gestures you to come in, and so the four of you enter."
     #show c basic at right with moveinright
-    c "Now that you’ve all been introduced, I don’t mind if we begin initiation with just us two. But it’s up to you of course."
+    c "Now that you've all been introduced, I don't mind if we begin initiation with just us two. But it's up to you of course."
     "You figure Charis wants the other two to leave but holds off saying, instead opting to pick at his hands."
 
     call stayText
@@ -437,15 +439,15 @@ label alanDesk:
     "Hidden in the pile of half empty crisp packets, you notice a red flashing light, and upon looking closer..."
     u "BOO!" with vpunch
     #show a basic at right with moveinright
-    "Suddenly, a heavy looking figure jumpps up behind you."
+    "Suddenly, a heavy looking figure jumps up behind you."
 
     menu heightA:
         "You are quite tall; it feels rude to look down on them.":
-            $ player.Height = "tall"
+            $ player.height = "tall"
         "They are a decent amount shorter, not unheard of as you're average height.":
-            $ player.Height = "medium"
+            $ player.height = "medium"
         "It was rare you met someone shorter than you.":
-            $ player.Height = "short"
+            $ player.height = "short"
 
     u "I saw you on the hiddel camera. Don't think I don't have security now. You're new so I'll let you off...or will I?"
     "He grins at you, shooting you a wink. He seems slightly annoyed but doesn't seem like he's trying to threathen you."
@@ -453,7 +455,7 @@ label alanDesk:
 
     call nameInput
 
-    u "'aight {player.Name}, so what makes you think you can creep around my desk for?"
+    u "'aight {player.name}, so what makes you think you can creep around my desk for?"
     "He chuckles and gives you a playful push."
 
     menu apologyA:
@@ -471,7 +473,7 @@ label alanDesk:
     a "Oh, by the way, the name's Alan. Since you're new, I'll have to take you to Charis 'cause apparently, he doesn't trust me with new people. Eh, but you look like you're still alive so I dunno what his problem is."
     "You both start to walk over to a desk. It is covered in plastic flora, some unlike any you've ever seen before."
 
-    if player.Height == "tall":
+    if player.height == "tall":
         "On the way, you see another tall individual and hear them whispering 'Oh God' to themselves."
     else:
         "On the way, you see a giant of a person and hear them whispering 'Oh God' to themselves."
@@ -482,7 +484,7 @@ label alanDesk:
     u "Thanks. But what are you doing with this new guy? Alan, I swear if you leaked anything important--"
     a "Of course I didn't, Juni, what do you take me for? Charis has yapped enough about it to me already."
 
-    if player.Height == "short":
+    if player.height == "short":
         a "I caught this little {i}rat{/i} snooping around my desk all thanks to my CCTV."
     else:
         a "I caught this giant {i}rat{/i} snooping around my desk all thanks to my CCTV."
@@ -492,9 +494,9 @@ label alanDesk:
     u "Well, it's worked so far. Also, shouldn't you be taking the new guy to Charis so he can get them sorted and introduced? That is your job, after all."
     a "Yes {i}Juni{/i}. I was about to do that but because I'm {i}such{/i} a {i}great{/i} friend, I remembered to give you the crisps you asked for, remember?! Also, I think you'll find our job description is to--"
     u "I know what our job description is, but the new guy doesn't and that's for Charis to explain. What your name anyways?"
-    "'I'm {player.Name}', you say."
+    "'I'm {player.name}', you say."
     "Juniper reaches out to shake your hand. You see the tips of their medium brown hands fake to a rusted red color as if stained."
-    j "That's a nice name. Nice to meet you, {player.Name}. I'm Juniper. Anyways, we should take you to Charis. I'm sure he's already worrying."
+    j "That's a nice name. Nice to meet you, {player.name}. I'm Juniper. Anyways, we should take you to Charis. I'm sure he's already worrying."
     a "Yep, and that's your problem now, I've got shit to do; Bye!"
     "He starts to walk off, but Juniper grabs him by the scruff of his neck."
     "A noise of complain escapes him, but Juniper seems undeterred."
@@ -511,8 +513,8 @@ label alanDesk:
     c "Hello, Im Charis. It is nice to meet you. I'll be taking care of you from now on."
     menu introC:
         "Greet him":
-            "Hi, I'm {player.Name}."
-            c "Nice to meet you {player.Name}"
+            "Hi, I'm {player.name}."
+            c "Nice to meet you {player.name}"
         "Question him":
             "'Where am I and what's going on?'"
             c "I am sure this is all confusing, but I'll answer in due time. I must first explain how we do things around here."
