@@ -294,4 +294,4 @@ label sceneTwo:
                     jump removePain
                 "Why?":
                     u "This is the purpose of your presence. To make the decisions that will shape the new world. Take your time, and choose wisely, but in the end you must decide."
-                    jump removePain
+                    jump removePai

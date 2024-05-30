@@ -472,4 +472,4 @@ label momBirds:
     f "The sunrise on the beach was one tradition I wanted to continue. But honestly, filling that book in while we were camping, well, that one was even more special to me."
     f "Without her, it just wasn't the same, but I always take it with me, you know. Having it in my pocket and listening to the birdsong… It just makes me feel like she's still here."
     "A tear begins forming in the corner of your dad's eye, but he quickly wipes it away and composes himself."
-    $ bookedGain = True
+    $ bookedGain = Tru
