@@ -1,12 +1,13 @@
 init python:
     class Player:
-        def __init__(self, name, height, aLover, style, chaos, calm):
+        def __init__(self, name, height, aLover, style, chaos, calm, save):
             self.name = name
             self.height = "medium"
             self.aLover = False
             self.style = "random"
             self.chaos = 0
             self.calm = 0
+            self.save = False
 
 # World Choices
 define pain = True
@@ -32,5 +33,5 @@ define f = Character("Father")
 define b = Character("Bri")
 
 #player character
-define player = Player("Y/N", "medium", False, "random", 0, 0)
+define player = Player("Y/N", "medium", False, "random", 0, 0, False)
 define p = Character(player.name)

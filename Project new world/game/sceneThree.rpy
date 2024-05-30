@@ -98,7 +98,7 @@ label sceneThree:
         "With that, Alan storms off, stomping away, clearly needing some time to himself. Despite everything, Charis still seems pleased."
         c "For what it is worth… Thank you. I believe you've saved many from a lifetime of pain. Yes, it could be a helpful sign, but is it worth it? I don't believe so, and I am glad you see the same."
         c "I think you did the right thing here. The people of your world will learn to live without pain and will get the blessing to never experience it."
-        "Charles picks at his hands, seeing you're still a bit on edge. He gives you a smile."
+        "Charis picks at his hands, seeing you're still a bit on edge. He gives you a smile."
         "I will leave you be, but well done on the good work today. I think we can make a beautiful world together: All of us."
         "With that, he gives you a nod and leaves you be."
     
@@ -137,9 +137,9 @@ label juniConvo:
                 
                 menu friendship:
                     "Charis and Alan":
-                        p "Are Charles and Alan not your friends?"
+                        p "Are Charis and Alan not your friends?"
                         j "Not in any meaningful, no."
-                        j "I suppose Charles may lend me a book once in a while… And if I find one in a file, I'm sure to bring it to him. I guess Alan is fond of me on occasion. He brings me snacks, which he doesn't do for most."
+                        j "I suppose Charis may lend me a book once in a while… And if I find one in a file, I'm sure to bring it to him. I guess Alan is fond of me on occasion. He brings me snacks, which he doesn't do for most."
                         j "If that is friendship, then maybe…Though, some differences make it harder for any of us to be truly close."
                         j "Maybe that's why they wanted you? To bridge the gap that divides us all…"
                     "We could be friends":
@@ -179,14 +179,14 @@ label juniConvo:
         "Why do they care so much about this?":
             j "Juniper can't help but laugh a little at this. They seem glad you asked such a question."
             j "Because it has taken many years to even reach this point. This world was supposed to be recycled forever ago, but they are also indecisive."
-            j "The other gods largely side with Alan or Charles on most matters, with some floating in between. Side with one is to side with chaos itself and to side with the other is to side with calm."
+            j "The other gods largely side with Alan or Charis on most matters, with some floating in between. Side with one is to side with chaos itself and to side with the other is to side with calm."
             j "They all want this world to follow the mold they set out: no compromises."
             j "So you are, in a way, are that compromise."
             jump newWorld
         "Why do they all want a new world so much?"
             j "Hmm...It's hard to say."
             j "Looking at those two, the reasons are simple. Alan thinks everything on that world is rotten and spoiled: to controlled with little real freedom."
-            j "On the other hand, Charles sees the mess they've made. That world has been dying for years with only recent attempts from those inhabiting it to save it."
+            j "On the other hand, Charis sees the mess they've made. That world has been dying for years with only recent attempts from those inhabiting it to save it."
             j "If those on the world don't care for it, why should we? That is the logic they follow. Everyone else has given up on it and we should too."
             p "Do you think that we should give up on it?"
             "Juniper pauses a moment, considering their answer carefully."
