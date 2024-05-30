@@ -1,4 +1,4 @@
-include "characters.py"
+include "characters.rpy"
 
 $ juniSearches = False
 $ futureFriend = False

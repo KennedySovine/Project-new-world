@@ -5,7 +5,6 @@ define pLover = False
 define pStyle = "random"
 define pChaos = 0
 define pCalm = 0
-define pSave = False
 define oldworldInterest = False
 
 # World Choices

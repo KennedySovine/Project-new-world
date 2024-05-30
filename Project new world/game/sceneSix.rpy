@@ -1,4 +1,4 @@
-include "characters.py"
+include "characters.rpy"
 
 $ f = Character("Dad")
 $ bookedGain = False
