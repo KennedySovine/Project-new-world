@@ -526,4 +526,4 @@ label alanDesk:
         "Don't say anything":
             "You want to hear Charis out, but don't want to get involved with the drama."
     "Charis lets out a sigh when the other two don't budge, resigned to have them spectate."
-    return                                                                                                                                                                                                             
+    return

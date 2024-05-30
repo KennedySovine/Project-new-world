@@ -193,4 +193,4 @@ label juniConvo:
             "Juniper pauses a moment, considering their answer carefully."
             j "That is the only opinion to have. You would be wise to share it too."
         "You decide not to ask anymore":
-            pas
+            pass
