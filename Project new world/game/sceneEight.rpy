@@ -276,12 +276,13 @@ label sceneEight:
             "The fear of jumping and missing out both tugged on you too far and now you never want anyone to be in that situation again."
             "Your option is accepted, and you feel the memory start to fall away."
             $ fear = False
+            $ pChaos += 1
         "No":
             "Although today had been hard, everything seemed to scare you; undoubtedly, that was still important?"
             "You were scared to jump because you could die. You were also scared to be alone. And wasn't it important to feel that even if it hurts?"
             "You reach forward, and your option is accepted. You feel the memory start to fall away."
             $ fear = True
-
+            $ pCalm += 1
 
 
 label bikeChoice:
