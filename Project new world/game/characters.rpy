@@ -18,12 +18,14 @@ define bg_black = Solid("#000000")
 define bg_white = Solid("#FFFFFF")
 
 # Characters
-define j = Character("Juniper")
+define j = Character("Juniper", image="images/juniperSprite.png")
 image j basic = "images/juniperSprite.png"
 
-define c = Character("Charis")
+define c = Character("Charis", image="images/Charis.png")
+image c basic = "images/Charis.png"
 
-define a = Character("Alan")
+define a = Character("Alan", image="images/Alan.png")
+image a basic = "images/Alan.png"
 
 define p = Character("")
 

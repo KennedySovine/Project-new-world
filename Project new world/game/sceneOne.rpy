@@ -17,15 +17,15 @@ label nameInput:
 label stayText:
     menu staying_menu:
         "'I'd like to hear what's going on. From {i}all{/i} of you.'":
-            show j basic at right with moveinright
-            #show c basic at left with moveinleft
+            show j basic at center 
+            show c basic at right 
             "Juniper and Alan share a smug look, Juniper taps Charis on the shoulder."
             j "C'mon Charis even they want us to stay just get on with it already and we can get back to work."
             "Charis lets out a long sigh, he clearly hadn't wanted this to go this way."
             c "Fine..."
         "'If Charis wants to tell me I'm happy to listen to him.'":
-            #show c basic at left with moveinleft
-            #show a basic at right with moveinright
+            show c basic at right 
+            show a basic at left 
             "Charis looks to you, surprised but pleased to hear your verdict."
             "The other two look slightly less pleased, but Alan looks determined."
             a "Look I don't care if you want me here, I'm staying. Got it?"
@@ -35,7 +35,7 @@ label stayText:
         "'Can someone just tell me what's going on?'":
             "The three look over to you, for once unified as all share a sense of empathy."
             "They've all been in your shoes but the way you spoke reminded them instantly of some long-forgotten pasts. They look at you apologetically."
-            show j basic at right with moveinright
+            show j basic at center 
             j "Go on Charis... floors yours."
     return
 
@@ -79,9 +79,9 @@ label sceneOne:
             "You move towards the desk with junk food and drinks, and a half-drunk bottle of whisky."
             call alanDesk
     hide j basic
-    #hide c basic
-    #hide a basic
-    #show c basic at right with moveinright
+    hide c basic
+    hide a basic
+    show c basic at right 
     "Charis smooths out his robes and quickly rummages to find a piece of paper on his desk. He hands you a file and printed in big, red text on the front it reads:"
     "PROJECT NORTH"
     c "It is about time I formally welcome you to Shad Tuod. To put it simply, this is the Office of the Gods."
@@ -95,46 +95,47 @@ label sceneOne:
     menu reactionOne:
         "Why me?":
             p "Why me? What makes me different?"
+            show c basic at right
             c "Because you're a good person and we can trust your choice to be true."
-            show j basic at left
+            show j basic at center
             j "You have...a connection to the old world that we deem worth exploring."
-            #hide c basic
-            #show a basic at right
+            hide c basic
+            show a basic at left
             a "Because you're the {i}chosen one{/i}, destined to save the world from its own destruction."
             "The other two shoot Alan a look. You hope it was a joke."
             hide j basic
-            #hide a basic
-            jump reaction
+            hide a basic
+            jump reactionOne
         "I don't want to":
             p "What if I don't want to? Why can't I go back?"
-            #show a basic at left
+            show a basic at left
             a "Go back where? Go on, tell me one thing about yourself. Tell me where you're going back to."
             "Juniper scowls behind him and Charis lets out a gasp, but you barely notice as your mind begins to spiral."
             "It was cruel, but it was true. You try to remember who you were, where you came from, but it's all a blur. There's nothing."
-            show j basic at right
+            show j basic at center
             j "When a god is made, their old life is lost. You can't go back...I'm sorry."
-            #hide a basic
-            #hide j basic
-            jump reaction
+            hide a basic
+            hide j basic
+            jump reactionOne
         "The old world?":
             p "What's so wrong with the old world?"
-            #show a basic at left
+            show a basic at left
             a "It's broken and dying; that's a stupid question."
-            #show c basic at right
+            show c basic at right
             c "Whilst there is some beauty in that world, it has been corrupted. We know we can do better, we just need your assistance in that matter."
             "The two of them look at you as if you're the answer to all their questions. Juniper folds their arms and looks away, not wanting to get involved."
-            #hide a basic
-            #hide c basic
-            jump reaction
+            hide a basic
+            hide c basic
+            jump reactionOne
         "Agree":
             p "Alright, let's get started."
             pass
         
-    #show c basic at right
+    show c basic at right
     c "Alright, we will take you to your desk shortly. There you will find a file. Please open it and you will experience a tale from the old world."
     c "This will help you guide you to a choice, and what you decide will impact the new world we build."
     c "So be careful what you pick. There's no going back..."
-    #hide c basic
+    hide c basic
     "The three of them walk you to your desk. You spot it immediately because it is completely empty aside from the file."
     "You feel a weight in your pocket and stick your hand in to find out what it is."
 
@@ -160,9 +161,9 @@ label sceneOne:
 
     "You look at the file on your desk with renewed interest and pick it up. On the front, it reads:"
     "OW_NG_CASE-1_PAIN"
-    #show c basic at right
+    show c basic at right
     c "We will wait just outside for you to finish. Thank you again for your help with all of this."
-    #hide c basic
+    hide c basic
     "You nod. Once they step outside, you open the file and begin to read."
     return
 
@@ -202,7 +203,7 @@ label juniperDesk:
             "Minutes pass, it feels like an eternity but eventually you hear footsteps."
             $ nosey = False
 
-    show j basic at right with moveinright
+    show j basic at center 
     "A person rounds the corner and stares at you. Despite your surprise to see them, they seem entirely unbothered at your sudden appearance."
     "They survey the room, and you take in their appearance: They stand incredibly tall."
     menu heightJ:
@@ -283,11 +284,11 @@ label juniperDesk:
     a "Well I may as well join you two to see him. Can't have him preaching too much goodness, can we?"
     j "As if we'll manage to get a word in about it..."
     "Alan laughs sarcastically but seems to agree, stepping into place behind you as the three of you walk."
-    hide j basic with moveoutright
+    hide j basic 
 
     "You approach a desk that is covered from top to bottom in books. A cat glances at you, curious at the new face."
     "Thick hardback books are stacked onto every possible surface, cluttering up the space and making it feel much smaller than Juniper's cubicle."
-    show j basic at right with moveinright
+    show j basic at center 
     "Juniper steps into their cubicle space first and you follow with Alan behind you."
     "You see a hunched over pale figure wearing pale silky robes. He seems to be older than the two you met previously, though it is hard to say for sure."
     "He looks frail and weak, though the appearance isn't helped stood near Juniper."
@@ -346,7 +347,7 @@ label charisDesk:
             $ nosey = False
             $ pLover = False
 
-    #show c basic at right with moveinright
+    show c basic at right 
     "Eventually, after an agonising wait someone enters the cubicle. You take a moment to observe the hunched individual."
     "He's wearing white silken robes, with golden embellishments. He has old fashioned sandals on his feet, explaining the loud footsteps from the clopping wood."
     "The bespectacled individual now meets your gaze. Their eyes look incredibly tired, their face well worn."
@@ -363,7 +364,7 @@ label charisDesk:
         u "That said he can be quite a rascal sometimes. Particularly… when it comes to knocking ink upon my parchment."
         "He darts across the table to prevent Alexios from toppling a glass vial of ink with his paws. For someone so frail he was surprisingly fast."
 
-    if nosey == False and playr.SaLover == False:
+    if nosey == False and pLover == False:
         u "Thank you for waiting so patiently. I'm glad you aren't the type to go rifling through a fellow's possessions when left unattended."
         "The man smiles to himself, seemingly satisfied in the fact that you showed restraint when given the temptation."
         u "That said, feel free to make yourself comfortable, I assure you Alexios does not bite."
@@ -394,7 +395,7 @@ label charisDesk:
     c "There are others who have awaited your arrival, and they wish to meet you too. Let's not keep them waiting. As soon as we're all together, we'll answer your questions."
     "You follow Charis out of the cubicle and back into the room of desks."
     "Once out the cubicle you hear a voice below out from behind..."
-    #show a basic at left with moveinleft
+    show a basic at left 
     u "Oi, Charis. You gonna introduce us or what! Or are you planning on hogging the newbie to yourself."
     "Charis winces as the loud individual calls to him."
     c "Ah, Alan. Whilst I appreciate your urgency, it may be advisable not to startle our new guest whilst they adapt to all this."
@@ -412,20 +413,20 @@ label charisDesk:
     c "Now that I've found you, we need to locate Juniper, and then we can get started with initiation."
     a "Oh boy, I can't {i}wait{/i} for initiation. Wouldn't want to miss that for the world. Literally."
     "You sense the searing sarcasm from Alans remark. Charis chooses to ignore Alans comment, and you continue."
-    #hide a basic with moveoutleft
+    hide a basic 
     "You eventually reach another cubicle, and Charis asks you and Alan to wait a second while he gets Juniper."
-    show j basic at left with moveinleft
+    show j basic at center 
     "Eventually, a new figure exits the cubicle alongside Charis. They have striking yellow eyes, and ears which you can only relate to that of a goat, poking out from their messy brown hair."
     u "It's nice to make your acquaintance."
     "Their voice is rather deep and gravely compared to what you expected, and you struggle to discern what they are saying at first."
     j "I am Juniper. I'd answer the questions you have, but I know how Charis wants to have that honour."
     "Juniper shoots Charis a knowing look, and he shuffles a bit, clearly knowing that they are accommodating his wishes perhaps against their own."
     c "I appreciate everyone allowing me to guide this initiation. Now we are gathered, lets head back to my desk to get started."
-    hide j basic with moveoutleft
-    #hide c basic with moveoutright
+    hide j basic 
+    hide c basic 
     "You walk in silence back to Charis's cubicle. Your mind whirring from all these new faces and places that don't seem to fit together."
     "Charis gestures you to come in, and so the four of you enter."
-    #show c basic at right with moveinright
+    show c basic at right 
     c "Now that you've all been introduced, I don't mind if we begin initiation with just us two. But it's up to you of course."
     "You figure Charis wants the other two to leave but holds off saying, instead opting to pick at his hands."
 
@@ -439,7 +440,7 @@ label alanDesk:
     "On the desk is two consoles and a gaming player, all stacked on top of one another, with a gaming laptop beside them. They're all paired with a cheap, tiny monitor with a black spot in the corner."
     "Hidden in the pile of half empty crisp packets, you notice a red flashing light, and upon looking closer..."
     u "BOO!" with vpunch
-    #show a basic at right with moveinright
+    show a basic at left 
     "Suddenly, a heavy looking figure jumps up behind you."
 
     menu heightA:
@@ -479,7 +480,7 @@ label alanDesk:
     else:
         "On the way, you see a giant of a person and hear them whispering 'Oh God' to themselves."
     
-    show j basic at left
+    show j basic at center
     a "Oh hey, Juni!"
     "Alan chucks a pack of crisps from his pocket to Juni"
     u "Thanks. But what are you doing with this new guy? Alan, I swear if you leaked anything important--"
@@ -504,13 +505,13 @@ label alanDesk:
     j "Hey, I'm not dealing with them alone; we'll take you to Charis."
     "Alan grumbles in quiet protest, but the two lead you to Charis' desk."
 
-    hide j basic with moveoutleft
-    #hide a basic with moveoutright
+    hide j basic 
+    hide a basic 
     "As you approach, you see a space littered with books. A cat sits atop them looking at you with keen eyes."
     "You see a hunched over, pake figure wearing pale, silky robes. He seems to be older than the two you met previously, thought you can't say for sure."
     "He looks frail and weak, though the appearence isn't helped stoof near Juniper. He comes up to you."
 
-    #show c at right with moveinright
+    show c at right 
     c "Hello, Im Charis. It is nice to meet you. I'll be taking care of you from now on."
     menu introC:
         "Greet him":
