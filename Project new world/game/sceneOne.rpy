@@ -1,5 +1,7 @@
 include "characters.py"
 
+$ nosey = False
+
 init python:
     import random
 
@@ -65,8 +67,6 @@ label sceneOne:
     "You stand up and a warm stale breeze slowly drifts past, seemingly never-ending."
     "You noticed desks in cubicles, most seem to have small trinkets upon them."
 
-    $ nosey = False
-
     menu desk:
         #Juniper desk path
         "Desk with mysterious plants":
@@ -92,9 +92,9 @@ label sceneOne:
     c "That's why we've brought you in. All of us...well, we can't agree on what to do, so you're here to decide for us."
     c "You're here to help us form a new world and rejuvanate the old. You're here to help us with Project North."
 
-    menu reaction:
+    menu reactionOne:
         "Why me?":
-            "'Why me? What makes me different?'"
+            p "Why me? What makes me different?"
             c "Because you're a good person and we can trust your choice to be true."
             show j basic at left
             j "You have...a connection to the old world that we deem worth exploring."
@@ -106,7 +106,7 @@ label sceneOne:
             #hide a basic
             jump reaction
         "I don't want to":
-            "'What if I don't want to? Why can't I go back?'"
+            p "What if I don't want to? Why can't I go back?"
             #show a basic at left
             a "Go back where? Go on, tell me one thing about yourself. Tell me where you're going back to."
             "Juniper scowls behind him and Charis lets out a gasp, but you barely notice as your mind begins to spiral."
@@ -117,7 +117,7 @@ label sceneOne:
             #hide j basic
             jump reaction
         "The old world?":
-            "'What's so wrong with the old world?'"
+            p "What's so wrong with the old world?"
             #show a basic at left
             a "It's broken and dying; that's a stupid question."
             #show c basic at right
@@ -127,7 +127,7 @@ label sceneOne:
             #hide c basic
             jump reaction
         "Agree":
-            "'Alright, let's get started.'"
+            p "Alright, let's get started."
             pass
         
     #show c basic at right
@@ -461,14 +461,14 @@ label alanDesk:
 
     menu apologyA:
         "Apologize":
-            "'I was just curious. Sorry'"
+            p "I was just curious. Sorry."
             u "Well, curiosity kills the cat, don't it? Well, not that you can--ah, never mind."
         "Question":
-            "'Where am I and why am I here?'"
+            p "Where am I and why am I here?"
             u "Woah there, one question at a time. So, basically, something something you work for us now, we'll work out the nitty gritty later."
             u "Anyways, Charis always gets pissy when I say too much. Something about an NDA? Apparently, we have laws up here or summ'in."
         "Joke":
-            "'I was trying to nick your pStyle Looked liek I could get a good profit out of it.'"
+            p "I was trying to nick your PC. Looked like I could get a good profit out of it."
             u "Ahh, you see, that's what the cameras are for: catching lil' rats like you!"
     
     a "Oh, by the way, the name's Alan. Since you're new, I'll have to take you to Charis 'cause apparently, he doesn't trust me with new people. Eh, but you look like you're still alive so I dunno what his problem is."
@@ -479,7 +479,7 @@ label alanDesk:
     else:
         "On the way, you see a giant of a person and hear them whispering 'Oh God' to themselves."
     
-    show j basic at left with moveinleft
+    show j basic at left
     a "Oh hey, Juni!"
     "Alan chucks a pack of crisps from his pocket to Juni"
     u "Thanks. But what are you doing with this new guy? Alan, I swear if you leaked anything important--"
@@ -517,7 +517,7 @@ label alanDesk:
             "Hi, I'm [p]."
             c "Nice to meet you [p]"
         "Question him":
-            "'Where am I and what's going on?'"
+            p "Where am I and what's going on?"
             c "I am sure this is all confusing, but I'll answer in due time. I must first explain how we do things around here."
     "Charis pauses as if waiting for your other companions to leave the conversation, but he holds off asking them directly, instead opting to pick at his hands."
     menu stay:

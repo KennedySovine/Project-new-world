@@ -5,6 +5,7 @@ $ futureFriend = False
 label sceneThree:
     "You make your decision and immediately feel like you're travelling far too fast. You might throw up."
     "Before you get a chance to you suddenly see mto grind to a stop, back under the artificial lights of the office."
+    show bg office
 
     menu outside:
         "The air is stale":
@@ -26,7 +27,7 @@ label sceneThree:
     "A grumble resonates from Alan and you look around at your company for Charis who seems embarrassed after Juniper's call out. You wonder why these two care so much and you wonder why Juniper doesn't."
     j "Drink your water. Is there anything else you may need?"
 
-    menu reaction:
+    menu reactionThree:
         "Freak out":
             p "What the {i}hell{/i} was that?! Did you guys drug me or something?"
             c "We would never!It was just a memory, you see? A scenario from the old world to help you decide on features in the new."
@@ -183,7 +184,7 @@ label juniConvo:
             j "They all want this world to follow the mold they set out: no compromises."
             j "So you are, in a way, are that compromise."
             jump newWorld
-        "Why do they all want a new world so much?"
+        "Why do they all want a new world so much?":
             j "Hmm...It's hard to say."
             j "Looking at those two, the reasons are simple. Alan thinks everything on that world is rotten and spoiled: to controlled with little real freedom."
             j "On the other hand, Charis sees the mess they've made. That world has been dying for years with only recent attempts from those inhabiting it to save it."
