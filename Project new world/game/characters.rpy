@@ -1,16 +1,18 @@
-init python:
-    class Player:
-        def __init__(self, name, height, aLover, style, chaos, calm, save):
-            self.name = name
-            self.height = "medium"
-            self.aLover = False
-            self.style = "random"
-            self.chaos = 0
-            self.calm = 0
-            self.save = False
+# Player stuff
+define pName = "Y/N"
+define pHeight = "medium"
+define pLover = False
+define pStyle = "random"
+define pChaos = 0
+define pCalm = 0
+define pSave = False
+define oldworldInterest = False
 
 # World Choices
 define pain = True
+define fear = True
+define oceans = True
+define forests = True
 # Images 
 image bg office = "images/officeBG.png"
 define bg_black = Solid("#000000")
@@ -32,6 +34,9 @@ define f = Character("Father")
 
 define b = Character("Bri")
 
+define cait = Character("Caitlin")
+
+define m = Character ("Miles")
+
 #player character
-define player = Player("Y/N", "medium", False, "random", 0, 0, False)
-define p = Character(player.name)
+define p = Character("Y/N")

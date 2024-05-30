@@ -20,7 +20,7 @@ label sceneThree:
     "You're brought back to yourself when you hear something slam on your desk. You can't help but jump and catch Alan's eye. He takes his hand away from your desk and you see a glass of water." with vpunch
     a "Drink up. What did you pick?"
     "You blink a couple of times,needing a moment to be yourself again. Whatever that was had felt so real. It almost felt wrong to be here now."
-    a "Helllooo? Earth to [player.name]? Tell us what you picked."
+    a "Helllooo? Earth to [pName]? Tell us what you picked."
     "You hear a noise of complaint come from Alan as if someone gave him a light hit"
     j "I know you two struggle to wait five whole minutes, but give them a break. Don't you remember your first file? Didn't almost feel like the end of the world?"
     "A grumble resonates from Alan and you look around at your company for Charis who seems embarrassed after Juniper's call out. You wonder why these two care so much and you wonder why Juniper doesn't."

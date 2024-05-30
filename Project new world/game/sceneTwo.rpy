@@ -135,7 +135,7 @@ label sceneTwo:
                     $ concern = True
                     "It seems your bluntness has caused the girl to become concerned about your wellbeing and state of mind."
     "A new voice enters the clearing; a shout from not too far behind where your supposed friend entered the area."
-    u "[player.name]! .... Briannah! ... Are you there?!"
+    u "[pName]! .... Briannah! ... Are you there?!"
     "The girl turns to face the voice and cups her hands around her mouth to shout back."
     $ b = Character("Bri")
     b "Over here! We're just ahead of you!"
@@ -205,7 +205,7 @@ label sceneTwo:
     
     if playerRan:
         "Bri and your father soon appraoch, having likely tracked you from your screams after the injury."
-        f "Are you okay? I'm so sorry, [player.name]. I've already ruined your birthday by shouting at you and now you're hurt because of me...!"
+        f "Are you okay? I'm so sorry, [pName]. I've already ruined your birthday by shouting at you and now you're hurt because of me...!"
     "It makes no sense how this pain can feel so authentic and real. You were in the office, reading the case file. There's no way you could really be on earth in another body...right?"
     "You feel the tears running down your cheeks caused by the pain of having twisted your ankle."
     f "Please forgive me...I know I'm not perfect, but I love you with all of my heart, and I always will. I thought Pandistone would be the perfect way to spend your birthday..."
@@ -275,7 +275,7 @@ label sceneTwo:
                 u "Are you sure you want to remove pain from the world?"
                 "Yes":
                     $ pain = False
-                    $ player.calm += 1
+                    $ pCalm += 1
                 "No":
                     jump removePain
         "No":
@@ -283,7 +283,7 @@ label sceneTwo:
                 u "Are you sure you want to keep pain in the world?"
                 "Yes":
                         $ pain = True
-                        $ player.chaos += 1
+                        $ pChaos += 1
                 "No":
                     jump removePain
         "What?":

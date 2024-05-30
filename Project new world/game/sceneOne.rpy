@@ -8,8 +8,8 @@ init python:
         return random.choice(styles)
 
 label nameInput:
-    $ player.name = renpy.input("What is your name?").strip()
-    $ p = Character(player.name)
+    $ pName = renpy.input("What is your name?").strip()
+    $ p = Character(pName)
     return
 
 label stayText:
@@ -143,20 +143,20 @@ label sceneOne:
             "You pull out a black snake shaped ring that curls around your finger. It has a few red gems ingrained on it."
             "You slip it on, pleased to see it fits your fingers with ease before taking it back off."
             "You place it on your desk. It feels more like you now."
-            $ player.style = "gothic"
+            $ pStylestyle = "goth"
         "An old phone":
             "You pull out an old phone with a cracked screen with no battery. A charm of a cute character dangles off it."
             "You thumb over the buttons and turn it to see the charm. It's worn out and clearly well loved."
             "You place it on your desk. You feel less alone with the character here."
-            $ player.style = "cute"
+            $ pStylestyle = "cute"
         "A set of earbuds":
             "You pull out a set of fancy earbuds in a sleek white case. You think you can hear music playing from them."
             "You open the case and put a bud in your ear. A nice song is playing that you don't recognise."
             "You place the case on your desk. It's a bit less empty now."
-            $ player.style = "modern"
+            $ pStylestyle = "modern"
         "Leave it":
             "You leave it for now, but whatever it was immedialty dissapears from your pocket."
-            $ player.style = randomStyle()
+            $ pStylestyle = randomStyle()
 
     "You look at the file on your desk with renewed interest and pick it up. On the front, it reads:"
     "OW_NG_CASE-1_PAIN"
@@ -207,13 +207,13 @@ label juniperDesk:
     "They survey the room, and you take in their appearance: They stand incredibly tall."
     menu heightJ:
         "It was rare you met someone taller than you. It makes you feel slightly uneasy.":
-            $ player.height = "tall"
+            $ pHeight = "tall"
 
         "They are a decent amount taller, not unheard of as you're average height.":
-            $ player.height = "medium"
+            $ pHeight = "medium"
 
         "You are quite short; it feels like they tower over you.":
-            $ player.height = "short"
+            $ pHeight = "short"
 
     "You follow where their yellow goat-like eyes go. It's the only part of them that is easy to follow on account of their dense bulky layers of clothes."
     "A thick cloak sits heavy on their shoulders. It's messy with twigs poking out, almost as if growing from the cloak itself." 
@@ -268,7 +268,7 @@ label juniperDesk:
     "A voice shouts out, followed by a noise of complaint as something hits Juniper square in the face."
     "Juniper scowls, you follow their gaze and see someone with short spikey red hair."
 
-    if player.height == "short":
+    if pHeight == "short":
         "They seem to be around your height."
     else:
         "You appear to be taller than them."
@@ -312,13 +312,13 @@ label charisDesk:
     menu heightC:
         "The books are almost as tall as you are":
             "You peer down at the towering tomes. There's a wealth of material covering wars, ethics, science, technology, even cookbooks."
-            $ player.height = "tall"
+            $ pHeight = "tall"
         "The books are on level with your head":
             "You are almost impressed with the sheer quantity of reading materials contained within the compact cubicle space, even if disorganized."
-            $ player.height = "medium"
+            $ pHeight = "medium"
         "The books tower above you like giants.":
             "You are careful not to knock into any of them. Partly from fear that you'd meet your unfortunate demise beneath their heavy embrace."
-            $ player.height = "short"
+            $ pHeight = "short"
 
     "You look back to the desk. It is adorned with various trinkets, parchment, ink bottles, and rather large amount of cat hair. Not to mention even more books."
     "As your gaze meets the centre of the desk, a file catches your attention. It's resting beneath the paw of the cat, but you can make out the letters '-DENTIAL'."
@@ -331,20 +331,20 @@ label charisDesk:
             "Additionally, there's a title to the document: 'OW_NG_CASE-1_PAIN'. "
             "Before you can have time to open the file, you hear footsteps approaching. You scramble to move yourself back to the front of the desk and compose yourself."
             $ nosey = True
-            $ player.aLover = False
+            $ pLover = False
         "You reach your hand out gently to pet the cat":
             "Whilst the document is certainly appealing, you can't help but want to greet the furry feline that is your first contact in this mysterious place."
             "The cat sniffs at your hand, acting as your judge. Clearly it deems you to be of good character, as it begins nuzzling your hand, and emits a heartwarming purr."
             "You begin to hear footsteps. You turn to face the entrance, but you cannot bring yourself to retract your hand from the adorable purring cat."
             $ nosey = False
-            $ player.aLover = True
+            $ pLover = True
         "You keep your distance, not wishing to come across as nosey":
             "The cat looks at you with a more relaxed expression, now stretching out to fully cover the document."
             "Any chance to read it has now been lost beneath its furry mass. You hope that in time you'll be able to gain the answers to your many questions."
             "If only you could find someone to talk to. As nice as the cat's company is, it doesn't make for a great source of information."
             "As if to answer your internal pleas, the sound of footsteps begins to reach your ears."
             $ nosey = False
-            $ player.aLover = False
+            $ pLover = False
 
     #show c basic at right with moveinright
     "Eventually, after an agonising wait someone enters the cubicle. You take a moment to observe the hunched individual."
@@ -357,7 +357,7 @@ label charisDesk:
         u "I'm willing to accept your curiosity given the circumstances. But my peers may not be quite so forgiving. Don't worry, it's only natural to have questions, and me and Alexios won't tell."
         "You gather that Alexios is the cat. The fellow forms a meek smile, and you feel he won't hold this against you."
 
-    if player.aLover == True:
+    if pLover == True:
         u "Ah, I see you've met Alexios. He's a great judge of character you know, so he must like you to be purring such a storm."
         "The old man chuckles to himself and forms a smile so warm that you can't help but reciprocate."
         u "That said he can be quite a rascal sometimes. Particularly… when it comes to knocking ink upon my parchment."
@@ -400,11 +400,11 @@ label charisDesk:
     c "Ah, Alan. Whilst I appreciate your urgency, it may be advisable not to startle our new guest whilst they adapt to all this."
     "You look at this Alan character as he catches up to you."
 
-    if player.height == "tall":
+    if pHeight == "tall":
         "Alan seems to be rather short in comparison to yourself and Charis, although Charis's hunch does reduce his overall height."
-    if player.height == "medium":
+    if pHeight == "medium":
         "You are a little taller than Alan, though shorter than Charis if you account for his hunch."
-    if player.height == "short":
+    if pHeight == "short":
         "Alan seems to be around your height, and a bit shorter than Charis, you gather Charis would be taller, if only they weren't so hunched over all the time."
             
     a "Yeah, yeah whatever. I knew you'd be the first to find 'em anyways. Course if we did find 'em before you, I'd never here the bloody end of it."
@@ -444,11 +444,11 @@ label alanDesk:
 
     menu heightA:
         "You are quite tall; it feels rude to look down on them.":
-            $ player.height = "tall"
+            $ pHeight = "tall"
         "They are a decent amount shorter, not unheard of as you're average height.":
-            $ player.height = "medium"
+            $ pHeight = "medium"
         "It was rare you met someone shorter than you.":
-            $ player.height = "short"
+            $ pHeight = "short"
 
     u "I saw you on the hiddel camera. Don't think I don't have security now. You're new so I'll let you off...or will I?"
     "He grins at you, shooting you a wink. He seems slightly annoyed but doesn't seem like he's trying to threathen you."
@@ -456,7 +456,7 @@ label alanDesk:
 
     call nameInput
 
-    u "'aight [player.name], so what makes you think you can creep around my desk for?"
+    u "'aight [p], so what makes you think you can creep around my desk for?"
     "He chuckles and gives you a playful push."
 
     menu apologyA:
@@ -468,13 +468,13 @@ label alanDesk:
             u "Woah there, one question at a time. So, basically, something something you work for us now, we'll work out the nitty gritty later."
             u "Anyways, Charis always gets pissy when I say too much. Something about an NDA? Apparently, we have laws up here or summ'in."
         "Joke":
-            "'I was trying to nick your player. Looked liek I could get a good profit out of it.'"
+            "'I was trying to nick your pStyle Looked liek I could get a good profit out of it.'"
             u "Ahh, you see, that's what the cameras are for: catching lil' rats like you!"
     
     a "Oh, by the way, the name's Alan. Since you're new, I'll have to take you to Charis 'cause apparently, he doesn't trust me with new people. Eh, but you look like you're still alive so I dunno what his problem is."
     "You both start to walk over to a desk. It is covered in plastic flora, some unlike any you've ever seen before."
 
-    if player.height == "tall":
+    if pHeight == "tall":
         "On the way, you see another tall individual and hear them whispering 'Oh God' to themselves."
     else:
         "On the way, you see a giant of a person and hear them whispering 'Oh God' to themselves."
@@ -485,7 +485,7 @@ label alanDesk:
     u "Thanks. But what are you doing with this new guy? Alan, I swear if you leaked anything important--"
     a "Of course I didn't, Juni, what do you take me for? Charis has yapped enough about it to me already."
 
-    if player.height == "short":
+    if pHeight == "short":
         a "I caught this little {i}rat{/i} snooping around my desk all thanks to my CCTV."
     else:
         a "I caught this giant {i}rat{/i} snooping around my desk all thanks to my CCTV."
@@ -495,9 +495,9 @@ label alanDesk:
     u "Well, it's worked so far. Also, shouldn't you be taking the new guy to Charis so he can get them sorted and introduced? That is your job, after all."
     a "Yes {i}Juni{/i}. I was about to do that but because I'm {i}such{/i} a {i}great{/i} friend, I remembered to give you the crisps you asked for, remember?! Also, I think you'll find our job description is to--"
     u "I know what our job description is, but the new guy doesn't and that's for Charis to explain. What your name anyways?"
-    "'I'm [player.name]', you say."
+    "'I'm [p]', you say."
     "Juniper reaches out to shake your hand. You see the tips of their medium brown hands fake to a rusted red color as if stained."
-    j "That's a nice name. Nice to meet you, [player.name]. I'm Juniper. Anyways, we should take you to Charis. I'm sure he's already worrying."
+    j "That's a nice name. Nice to meet you, [p]. I'm Juniper. Anyways, we should take you to Charis. I'm sure he's already worrying."
     a "Yep, and that's your problem now, I've got shit to do; Bye!"
     "He starts to walk off, but Juniper grabs him by the scruff of his neck."
     "A noise of complain escapes him, but Juniper seems undeterred."
@@ -514,8 +514,8 @@ label alanDesk:
     c "Hello, Im Charis. It is nice to meet you. I'll be taking care of you from now on."
     menu introC:
         "Greet him":
-            "Hi, I'm [player.name]."
-            c "Nice to meet you [player.name]"
+            "Hi, I'm [p]."
+            c "Nice to meet you [p]"
         "Question him":
             "'Where am I and what's going on?'"
             c "I am sure this is all confusing, but I'll answer in due time. I must first explain how we do things around here."
