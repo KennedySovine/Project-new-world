@@ -1,5 +1,3 @@
-include "characters.rpy"
-
 $ cookies = False
 
 label sceneEight:

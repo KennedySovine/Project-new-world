@@ -1,5 +1,3 @@
-include "characters.rpy"
-
 $ nosey = False
 
 init python:
@@ -511,7 +509,7 @@ label alanDesk:
     "You see a hunched over, pake figure wearing pale, silky robes. He seems to be older than the two you met previously, thought you can't say for sure."
     "He looks frail and weak, though the appearence isn't helped stoof near Juniper. He comes up to you."
 
-    show c at right 
+    show c basic at right 
     c "Hello, Im Charis. It is nice to meet you. I'll be taking care of you from now on."
     menu introC:
         "Greet him":

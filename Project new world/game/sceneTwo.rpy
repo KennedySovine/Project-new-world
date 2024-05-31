@@ -1,5 +1,3 @@
-include "characters.rpy"
-
 # Variables
 $ trust = False
 $ concern = False

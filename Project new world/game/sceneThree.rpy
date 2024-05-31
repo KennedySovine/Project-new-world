@@ -1,5 +1,3 @@
-include "characters.rpy"
-
 $ juniSearches = False
 $ futureFriend = False
 label sceneThree:

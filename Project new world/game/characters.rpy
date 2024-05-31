@@ -7,11 +7,16 @@ define pChaos = 0
 define pCalm = 0
 define oldworldInterest = False
 
+define helpJuniper = False
+
+
 # World Choices
 define pain = True
 define fear = True
 define oceans = True
 define forests = True
+define death = True
+define lies = True
 # Images 
 image bg office = "images/officeBG.png"
 define bg_black = Solid("#000000")
@@ -38,6 +43,8 @@ define b = Character("Bri")
 define cait = Character("Caitlin")
 
 define m = Character ("Miles")
+
+define n = Character("Nurse")
 
 #player character
 define p = Character("Y/N")

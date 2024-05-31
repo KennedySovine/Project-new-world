@@ -1,5 +1,3 @@
-include "characters.rpy"
-
 label againstCharis:
     "As you fade back into reality, you hear a quiet sigh as footsteps approach you."
     c "Hello, [pName]. I'd like to talk to you for a moment."
